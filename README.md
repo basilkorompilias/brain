@@ -37,7 +37,14 @@ A tagline written for Lyrá will not pass as a Kléos line, and the validator pr
 
 You need [Python 3.10+](https://www.python.org/downloads/) and any MCP-compatible AI client.
 
-### 1. Run setup (one time)
+### 1. Get the repo
+
+```bash
+git clone https://github.com/basilkorompilias/brain.git
+cd brain
+```
+
+### 2. Run setup (one time)
 
 | | How |
 |---|---|
@@ -47,7 +54,7 @@ You need [Python 3.10+](https://www.python.org/downloads/) and any MCP-compatibl
 
 Setup creates a local environment, installs dependencies, runs a quick check, and writes MCP config files. When you see **Done - Brand Brain is ready**, continue.
 
-### 2. Connect an MCP client
+### 3. Connect an MCP client
 
 **Cursor**
 
@@ -69,7 +76,7 @@ Setup writes `.cursor/mcp.json`.
 
 Use the same `command`, `args`, and `cwd` as in `mcp-config/claude_desktop.json`, adapted to your client's config format.
 
-### 3. Try a Creative-Director session
+### 4. Try a Creative-Director session
 
 Open chat with the tools enabled and paste something like:
 
