@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "brand-brain": {
+      "command": "python",
+      "args": ["-m", "brand_brain.server"],
+      "cwd": "${workspaceFolder}"
+    }
+  }
+}

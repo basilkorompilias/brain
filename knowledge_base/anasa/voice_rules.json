@@ -1,0 +1,37 @@
+{
+  "brand_id": "anasa",
+  "name": "Anása",
+  "industry": "Public Sector / Social Causes",
+  "voice_words": ["warm", "plain", "steady"],
+  "reading_grade_target": {"min": 3, "max": 7},
+  "sentence_length_target": {"max_avg_words": 14, "ideal_max_words": 18},
+  "person": "second person and inclusive first-person plural",
+  "banned_words": [
+    "crazy", "insane", "psycho", "lunatic", "nuts", "deranged",
+    "weak", "snap out of it", "man up", "suffer", "sufferer", "victim",
+    "comorbidity", "ideation", "presentation", "subject",
+    "good vibes only", "everything happens for a reason", "just stay positive",
+    "attention-seeking", "drama", "commit suicide"
+  ],
+  "banned_patterns": [
+    {"pattern": "\\bmental case\\b", "reason": "Stigmatising. Use respectful, person-first language.", "is_regex": true},
+    {"pattern": "\\b(just|simply) (relax|cheer up|calm down)\\b", "reason": "Minimises real feelings (toxic positivity).", "is_regex": true},
+    {"pattern": "[\\U0001F300-\\U0001FAFF]", "reason": "Avoid emoji in crisis-adjacent public-health copy.", "is_regex": true}
+  ],
+  "preferred_words": [
+    "breath", "okay", "talk", "listen", "reach out", "you're not alone",
+    "first step", "help", "support", "today", "anyone", "together",
+    "here for you", "no judgement"
+  ],
+  "required_elements": [
+    {"id": "cta", "label": "Include a clear next step / call to action", "any_of": ["call", "text", "reach out", "talk", "1to1", "helpline", "today"]},
+    {"id": "helpline", "label": "Signpost help (helpline mention) in campaign copy", "any_of": ["1to1", "helpline", "call", "text", "0800"]}
+  ],
+  "rules": [
+    {"id": "plain_language", "label": "Plain language, ~grade 6 reading level", "severity": "high"},
+    {"id": "no_stigma", "label": "No stigmatising or judgemental language", "severity": "high"},
+    {"id": "needs_cta", "label": "Always offer a concrete next step / helpline", "severity": "high"},
+    {"id": "no_toxic_positivity", "label": "No toxic positivity or minimising", "severity": "medium"},
+    {"id": "validate_first", "label": "Validate feelings before advising", "severity": "low"}
+  ]
+}

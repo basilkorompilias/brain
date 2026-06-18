@@ -1,0 +1,35 @@
+{
+  "brand_id": "kleos",
+  "name": "Kléos",
+  "industry": "Food, Drinks & Beverages",
+  "voice_words": ["bold", "witty", "proud"],
+  "reading_grade_target": {"min": 4, "max": 10},
+  "sentence_length_target": {"max_avg_words": 14, "ideal_max_words": 18},
+  "person": "confident second person / brand first person",
+  "banned_words": [
+    "smooth", "premium taste", "perfect serve", "crafted to perfection",
+    "smooth finish", "like no other", "sophisticated palate",
+    "treat yourself", "wasted", "hammered", "smashed", "getting drunk",
+    "blackout", "binge", "chug", "downed"
+  ],
+  "banned_patterns": [
+    {"pattern": "\\b(under ?-?\\s?(18|21|25)|teen|kids?|college)\\b", "reason": "Never target or depict under-25s (responsible marketing).", "is_regex": true},
+    {"pattern": "\\b(get|gets|getting) you (the girl|the guy|laid|ahead)\\b", "reason": "Never link alcohol to social or sexual success.", "is_regex": true},
+    {"pattern": "\\b(drink|sip) and drive\\b", "reason": "Never associate alcohol with driving.", "is_regex": true}
+  ],
+  "preferred_words": [
+    "fire", "gold", "glory", "myth", "oak", "barrel", "copper", "age",
+    "ember", "neat", "toast", "legend", "renown", "slow-aged", "Greek",
+    "bold", "raise"
+  ],
+  "required_elements": [
+    {"id": "responsibility", "label": "Include a responsible-drinking line (campaign copy)", "any_of": ["responsibly", "18+", "drink responsibly", "enjoy responsibly"]}
+  ],
+  "rules": [
+    {"id": "bold_punchy", "label": "Bold, punchy, rhythmic lines", "severity": "medium"},
+    {"id": "no_cliche", "label": "No tired spirits clichés ('smooth', 'perfect serve')", "severity": "high"},
+    {"id": "craft_backed", "label": "Back the swagger with a craft detail (barrel, oak, age)", "severity": "low"},
+    {"id": "responsible", "label": "Responsible marketing: no under-25s, excess, or success-claims", "severity": "high"},
+    {"id": "not_stuffy", "label": "Heritage with swagger, never museum-dull", "severity": "medium"}
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "brand_id": "anasa",
+  "campaigns": [
+    {
+      "id": "anasa-2025-firststep",
+      "title": "One Breath",
+      "year": 2025,
+      "channel": "TV + radio + national OOH",
+      "audience": "General public, weighted to men 40–60 (lowest help-seeking group)",
+      "format": "30s film + 6-sheet OOH + radio reads",
+      "hero_line": "It's okay to not be okay.",
+      "body": "Whatever today feels like, you don't have to carry it alone. Talk to someone. Call or text 1To1, free, any time. The first step is just one breath.",
+      "outcome": "Helpline contacts up 34% in 8 weeks; recall highest among target male audience; safe-messaging board approved with no changes.",
+      "why_it_worked": "Validated the feeling first, then gave one clear, low-effort action. Plain words, no judgement, helpline front and centre."
+    },
+    {
+      "id": "anasa-2024-checkin",
+      "title": "Ask Twice",
+      "year": 2024,
+      "channel": "Social (organic + paid) + workplace toolkits",
+      "audience": "16–30 + employers / HR",
+      "format": "Short-form video + carousels + manager guide",
+      "hero_line": "When someone says 'I'm fine' — ask twice.",
+      "body": "Sometimes 'I'm fine' means 'I'm not, but I don't know how to say it.' You don't need the right words. Just ask again, and listen. Need support? Text 1To1, any time.",
+      "outcome": "1.2M organic reach; 400+ workplaces downloaded the toolkit; 22% lift in 'I would check on a colleague' survey measure.",
+      "why_it_worked": "Gave people a tiny, doable behaviour ('ask twice') instead of a lecture. Warm, plain, actionable."
+    },
+    {
+      "id": "anasa-2024-youth",
+      "title": "You're Allowed",
+      "year": 2024,
+      "channel": "TikTok / Instagram + school programmes",
+      "audience": "Teens & young adults, 16–24",
+      "format": "Creator-led short video + school assembly pack",
+      "hero_line": "You're allowed to not have it all figured out.",
+      "body": "Big feelings are normal. So is asking for help. Whatever you're going through, someone's ready to listen — no judgement. Text 1To1, free, any time.",
+      "outcome": "Reached 60% of national 16–24 cohort; helpline youth contacts up 28%; reviewed and cleared by youth-safeguarding panel.",
+      "why_it_worked": "Met young people where they are, with their cadence, without trying too hard. Normalised help-seeking and signposted clearly."
+    }
+  ]
+}

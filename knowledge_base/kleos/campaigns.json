@@ -1,0 +1,41 @@
+{
+  "brand_id": "kleos",
+  "campaigns": [
+    {
+      "id": "kleos-2025-launch",
+      "title": "Make Your Own Myth",
+      "year": 2025,
+      "channel": "OOH + social + bar activations",
+      "audience": "Urban modern classicists, 25–40, UK & Greece",
+      "format": "Bold typographic OOH + 15s social + on-trade tastings",
+      "hero_line": "Old soul. New fire.",
+      "body": "Three thousand years of Greek glory, slow-aged in oak and handed to you. Pour it neat. Pour it loud. Just pour it like you mean it. Kléos. Drink responsibly. 18+.",
+      "outcome": "Outsold launch target by 60% in on-trade; won a design award for the OOH typography; 0 deep-discount activity.",
+      "why_it_worked": "Heritage swagger without the dust. The craft detail (slow-aged in oak) earned the boast; responsibility line kept it clean."
+    },
+    {
+      "id": "kleos-2024-toast",
+      "title": "To the Ones Who Earn It",
+      "year": 2024,
+      "channel": "Instagram + email (CRM)",
+      "audience": "Existing drinkers + craft-spirit community",
+      "format": "Carousel + subject-line-led email",
+      "hero_line": "Glory isn't given. It's poured.",
+      "body": "Here's to the early mornings and the long odds. To the ones who build something worth toasting. Raise a glass of Kléos — you earned it. Enjoy responsibly. 18+.",
+      "outcome": "38% email open rate, top-performing CRM campaign of the year; strong reshare rate on the hero line.",
+      "why_it_worked": "Tied the brand's 'earned glory' value to the audience's own grind. Proud, witty, and on-myth."
+    },
+    {
+      "id": "kleos-2024-oak",
+      "title": "What the Oak Knows",
+      "year": 2024,
+      "channel": "Long-form content + trade press",
+      "audience": "Bartenders, buyers, craft enthusiasts",
+      "format": "Distillery film + trade-press advertorial",
+      "hero_line": "Patience tastes like this.",
+      "body": "Years in Greek oak. Copper stills that have seen a few centuries. No shortcuts, no apologies — just fire that took its time. Kléos. Drink responsibly. 18+.",
+      "outcome": "Drove listings in 120+ premium bars; trade NPS for the brand rose sharply post-campaign.",
+      "why_it_worked": "Spoke to the trade as peers with real craft proof, while keeping the confident, unfussy Kléos bite."
+    }
+  ]
+}

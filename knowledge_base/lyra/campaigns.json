@@ -1,0 +1,41 @@
+{
+  "brand_id": "lyra",
+  "campaigns": [
+    {
+      "id": "lyra-2024-opening",
+      "title": "The Day Starts When You Decide It Does",
+      "year": 2024,
+      "channel": "OOH + print (high-end travel press)",
+      "audience": "Well-travelled HNW couples, 40–60, UK & DACH markets",
+      "format": "Full-page editorial + airport OOH",
+      "hero_line": "The day starts when you decide it does.",
+      "body": "A swim before the island wakes. Bread still warm. The sea, unhurried. Lyrá.",
+      "outcome": "Launch season sold out 11 weeks ahead; 0% paid-media discounting. Featured in Condé Nast Traveller 'Quietest Openings of the Year'.",
+      "why_it_worked": "Sold the feeling of time and subtraction, not the property. No price, no urgency, no superlatives."
+    },
+    {
+      "id": "lyra-2024-offseason",
+      "title": "Out of Season",
+      "year": 2024,
+      "channel": "Email (owned list) + Instagram (organic only)",
+      "audience": "Past guests and waitlist",
+      "format": "3-email sequence + carousel",
+      "hero_line": "The island, with the volume turned down.",
+      "body": "October light is longer. The cellar is fuller. The sea is yours. We keep a few rooms for those who prefer the quiet months.",
+      "outcome": "41% open rate, 9% direct-booking conversion, extended shoulder season by 6 weeks.",
+      "why_it_worked": "Reframed off-season as a privilege, not a discount. Stayed on-voice: calm, sensory, no offer language."
+    },
+    {
+      "id": "lyra-2023-cellar",
+      "title": "Stone & Cellar",
+      "year": 2023,
+      "channel": "On-property + partnerships (sommelier guilds)",
+      "audience": "Returning guests, food & wine travellers",
+      "format": "Experiential dinner series + invitation suite",
+      "hero_line": "Dinner is at the table the island built.",
+      "body": "One long table, cut from local stone. Wines from the cliffside cellar. No menu printed — the kitchen decides with the morning catch.",
+      "outcome": "Sold out all 8 dinners; 60% of attendees rebooked a future stay on the spot.",
+      "why_it_worked": "Specificity = luxury. The stone table and unprinted menu did the work that 'world-class dining' never could."
+    }
+  ]
+}
