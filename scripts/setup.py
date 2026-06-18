@@ -27,42 +27,24 @@ def _ensure_executable(path: Path) -> None:
         path.chmod(path.stat().st_mode | 0o111)
 
 
-def _mcp_server_entry(*, use_workspace_folder: bool) -> dict:
-    if use_workspace_folder:
-        if sys.platform == "win32":
-            command = "${workspaceFolder}/.venv/Scripts/python.exe"
-        else:
-            command = "${workspaceFolder}/.venv/bin/python"
-        return {
-            "command": command,
-            "args": ["-m", "brand_brain.server"],
-            "cwd": "${workspaceFolder}",
-        }
-    py = _venv_python()
-    return {
-        "command": str(py),
-        "args": ["-m", "brand_brain.server"],
-        "cwd": str(ROOT),
-    }
-
-
-def _write_mcp_configs() -> None:
+def _write_cursor_config() -> None:
+    if sys.platform == "win32":
+        command = "${workspaceFolder}/.venv/Scripts/python.exe"
+    else:
+        command = "${workspaceFolder}/.venv/bin/python"
     cursor_path = ROOT / ".cursor" / "mcp.json"
     cursor_path.parent.mkdir(exist_ok=True)
     cursor_path.write_text(
         json.dumps(
-            {"mcpServers": {"brand-brain": _mcp_server_entry(use_workspace_folder=True)}},
-            indent=2,
-        )
-        + "\n",
-        encoding="utf-8",
-    )
-
-    generic_path = ROOT / "mcp-config" / "claude_desktop.json"
-    generic_path.parent.mkdir(exist_ok=True)
-    generic_path.write_text(
-        json.dumps(
-            {"mcpServers": {"brand-brain": _mcp_server_entry(use_workspace_folder=False)}},
+            {
+                "mcpServers": {
+                    "brand-brain": {
+                        "command": command,
+                        "args": ["-m", "brand_brain.server"],
+                        "cwd": "${workspaceFolder}",
+                    }
+                }
+            },
             indent=2,
         )
         + "\n",
@@ -93,8 +75,8 @@ def main() -> None:
     print("3/4  Running smoke tests")
     _run([py, "tests/test_validator.py"])
 
-    print("4/4  Writing MCP config files")
-    _write_mcp_configs()
+    print("4/4  Writing config files")
+    _write_cursor_config()
     _run([sys.executable, str(ROOT / "scripts" / "pack_mcpb.py")])
 
     _ensure_executable(ROOT / "scripts" / "launch_mcp.py")
@@ -104,10 +86,8 @@ def main() -> None:
         """
 Done - Brand Brain is ready.
 
-Config files:
   Cursor:         .cursor/mcp.json
-  Claude Desktop: mcp-config/brand-brain.mcpb  (Install Extension in Claude settings)
-  Manual config:  mcp-config/claude_desktop.json  (Developer -> Edit Config)
+  Claude Desktop: mcp-config/brand-brain.mcpb
 
 See README.md for connection steps.
 """

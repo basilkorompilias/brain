@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "brand-brain": {
+      "command": "F:\\Development\\brain\\.venv\\Scripts\\python.exe",
+      "args": [
+        "-m",
+        "brand_brain.server"
+      ],
+      "cwd": "F:\\Development\\brain"
+    }
+  }
+}

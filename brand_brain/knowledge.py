@@ -4,7 +4,7 @@ Reads the per-brand documents from the knowledge_base/ directory. Keeping this
 as plain files on disk (markdown + JSON) is deliberate: it is the simplest thing
 that demonstrably works, it is reviewable by a Creative Director without a
 database, and it maps cleanly onto how agencies typically store brand books and
-campaign decks. See docs/BUILD.md for how this scales to 100+ clients.
+campaign decks. See docs/2_BUILD.md for how this scales to 100+ clients.
 """
 from __future__ import annotations
 

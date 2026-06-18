@@ -1,9 +1,0 @@
-{
-  "mcpServers": {
-    "brand-brain": {
-      "command": "/absolute/path/to/brain/.venv/bin/python",
-      "args": ["-m", "brand_brain.server"],
-      "cwd": "/absolute/path/to/brain"
-    }
-  }
-}

@@ -66,25 +66,16 @@ Setup writes `.cursor/mcp.json`.
 
 **Claude Desktop**
 
-1. Run setup first (step 2 above).
-2. Open Claude Desktop: **Settings -> Extensions -> Advanced settings -> Install Extension**.
-3. Select **`mcp-config/brand-brain.mcpb`** (created by setup).
-4. When prompted, set **Brand Brain folder** to your cloned repo path (the folder that contains `setup.command`).
-5. Confirm **brand-brain** shows 4 tools.
-
-`claude_desktop.json` is not an extension file. It is only for manual setup via **Settings -> Developer -> Edit Config** if you prefer editing JSON directly.
-
-**Other clients**
-
-Use the same `command`, `args`, and `cwd` as in `mcp-config/claude_desktop.json`, adapted to your client's config format.
+1. **Settings -> Extensions -> Advanced settings -> Install Extension**
+2. Select **`mcp-config/brand-brain.mcpb`**
+3. Set **Brand Brain folder** to this repo path
+4. Confirm **brand-brain** shows 4 tools
 
 ### 4. Try a Creative-Director session
 
 Open chat with the tools enabled and paste something like:
 
 > "Use brand-brain. I'm working on Lyrá. Pull the guidelines and past campaigns, then give me 3 launch concepts for the new winter season, write an OOH headline, an Instagram caption and an email subject line, then validate each with validate_copy and rewrite anything that isn't on-brand."
-
-A full walkthrough lives in [`docs/DEMO_SCRIPT.md`](docs/DEMO_SCRIPT.md).
 
 **Something not working?** Re-run setup, then restart your MCP client.
 
@@ -106,14 +97,12 @@ A full walkthrough lives in [`docs/DEMO_SCRIPT.md`](docs/DEMO_SCRIPT.md).
 │   ├── setup.py         # setup (also: python scripts/setup.py)
 │   └── launch_mcp.py    # cross-platform MCP launcher
 ├── mcp-config/
-│   ├── brand-brain.mcpb              # Claude Desktop extension (install via Settings)
-│   └── claude_desktop.example.json   # manual config template (Developer -> Edit Config)
-├── mcp-extension/                    # source for brand-brain.mcpb
+│   └── brand-brain.mcpb    # Claude Desktop extension
+├── mcp-extension/          # source for brand-brain.mcpb
 ├── docs/
-│   ├── STRATEGY.md      # Part 1: strategy write-up
-│   ├── BUILD.md         # Part 2: stack, prompt design, drift, productionizing
-│   ├── REFLECTION.md    # Part 3: surprises, next build, push-back
-│   └── DEMO_SCRIPT.md   # live 5-min walkthrough
+│   ├── 1_STRATEGY.md      # Part 1: strategy write-up
+│   ├── 2_BUILD.md         # Part 2: stack, prompt design, drift, productionizing
+│   └── 3_REFLECTION.md    # Part 3: surprises, next build, push-back
 ├── pyproject.toml
 └── .cursor/mcp.json
 ```
@@ -124,4 +113,4 @@ A full walkthrough lives in [`docs/DEMO_SCRIPT.md`](docs/DEMO_SCRIPT.md).
 - The server does the adjudication. Deterministic, reviewable, no black box.
 - The human Creative Director owns taste, strategy, and the final call.
 
-See [`docs/STRATEGY.md`](docs/STRATEGY.md) section 4 and [`docs/REFLECTION.md`](docs/REFLECTION.md).
+See [`docs/1_STRATEGY.md`](docs/1_STRATEGY.md) section 4 and [`docs/3_REFLECTION.md`](docs/3_REFLECTION.md).

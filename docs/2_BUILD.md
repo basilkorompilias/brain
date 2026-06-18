@@ -61,7 +61,7 @@ The validator returns evidence and suggestions, so the model can self-correct in
 
 **Serving and access**
 - Offer HTTP/SSE transport (the SDK supports it) so it's a hosted service, not a local process. Put auth and per-client access control in front (a creative only sees the brands they're assigned).
-- Per-client model routing for cost and EU data residency (see STRATEGY section 2). For example, Vertex EU endpoint for public-sector clients, cheapest-good model for FMCG.
+- Per-client model routing for cost and EU data residency (see `1_STRATEGY.md` section 2). For example, Vertex EU endpoint for public-sector clients, cheapest-good model for FMCG.
 
 **Quality and trust**
 - A golden-set evaluation harness. For each brand, a labelled set of on- and off-voice lines the validator must score correctly. The `tests/` here are the seed.
@@ -86,5 +86,5 @@ tests/test_validator.py    # 9 tests incl. cross-brand voice discrimination
 
 ```bash
 python scripts/setup.py
-# then connect via .cursor/mcp.json or mcp-config/claude_desktop.json
+# then connect via .cursor/mcp.json or mcp-config/brand-brain.mcpb
 ```
