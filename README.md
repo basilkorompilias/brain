@@ -1,6 +1,6 @@
 # Brand Brain
 
-A multi-brand MCP server that lets any creative team chat with a client's brand voice and instantly generate on-brand work. Concepts, copy, and self-critique, without re-loading the brand book from scratch every time.
+An MCP server that helps Creative Agencies generate and evaluate material consistent with inhouse standards and brand guidelines. Brand Brain has three tools: one to get brand rules, one to get past work, and one to check if the generated material follows the rules. It saves you from re-reading the brand book every time you start a task.
 
 Built as a Creative AI Technologist practical exercise (Track A).
 
@@ -39,31 +39,41 @@ You need [Python 3.10+](https://www.python.org/downloads/) and any MCP-compatibl
 
 ### 1. Get the repo
 
-Clone **once**:
+Clone **once** in Terminal:
 
 ```bash
 git clone https://github.com/basilkorompilias/brain.git
-cd brain
-ls setup.command
 ```
 
-The last command must print `setup.command`. If you see `brain/setup.command` instead, you cloned a second time by mistake. Delete the folder and start again.
+Do not run `git clone` again inside the `brain` folder.
 
 ### 2. Run setup (one time)
 
+**Mac:** Open your home folder in Finder and search for **`brain`**. Open that folder and double-click **`setup.command`**.
+
+To open it from Terminal after cloning:
+
+```bash
+open ~/brain
+```
+
+Then double-click **`setup.command`**. If macOS blocks it, right-click and choose Open.
+
 | | How |
 |---|---|
-| **Mac** | In Finder, double-click **`setup.command`** (if macOS blocks it: right-click, then Open) |
-| **Windows** | Double-click **`setup.bat`** |
-| **Terminal** | `./setup.command` |
+| **Mac** | Finder: search for `brain`, double-click **`setup.command`** |
+| **Windows** | In File Explorer, open the cloned **`brain`** folder and double-click **`setup.bat`** |
+| **Terminal** | `cd ~/brain && ./setup.command` |
 
 Setup creates a local environment, installs dependencies, runs a quick check, and writes MCP config files. When you see **Done - Brand Brain is ready**, continue.
 
 ### 3. Connect an MCP client
 
+Use the same **`brain`** folder you opened in step 2.
+
 **Cursor**
 
-1. **File -> Open Folder** and select that folder.
+1. **File -> Open Folder** and select that **`brain`** folder.
 2. **Settings -> MCP** -> enable **brand-brain**.
 3. Confirm you see **4 tools** with a green status.
 
@@ -71,7 +81,7 @@ Setup creates a local environment, installs dependencies, runs a quick check, an
 
 1. **Settings -> Extensions -> Advanced settings -> Install Extension**
 2. Select **`mcp-config/brand-brain.mcpb`** inside that folder
-3. Set **Repository root** to that same folder
+3. Set **Repository root** to that same **`brain`** folder
 4. Confirm **brand-brain** shows 4 tools
 
 ### 4. Try a Creative-Director session
