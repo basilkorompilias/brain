@@ -66,11 +66,13 @@ Setup writes `.cursor/mcp.json`.
 
 **Claude Desktop**
 
-1. Open `mcp-config/claude_desktop.json` (created by setup).
-2. Copy the `brand-brain` block into your Claude config:
-   - **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
-   - **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
-3. Restart Claude Desktop. Confirm **brand-brain** shows 4 tools.
+1. Run setup first (step 2 above).
+2. Open Claude Desktop: **Settings -> Extensions -> Advanced settings -> Install Extension**.
+3. Select **`mcp-config/brand-brain.mcpb`** (created by setup).
+4. When prompted, set **Brand Brain folder** to your cloned repo path (the folder that contains `setup.command`).
+5. Confirm **brand-brain** shows 4 tools.
+
+`claude_desktop.json` is not an extension file. It is only for manual setup via **Settings -> Developer -> Edit Config** if you prefer editing JSON directly.
 
 **Other clients**
 
@@ -104,7 +106,9 @@ A full walkthrough lives in [`docs/DEMO_SCRIPT.md`](docs/DEMO_SCRIPT.md).
 │   ├── setup.py         # setup (also: python scripts/setup.py)
 │   └── launch_mcp.py    # cross-platform MCP launcher
 ├── mcp-config/
-│   └── claude_desktop.example.json   # template; setup writes claude_desktop.json locally
+│   ├── brand-brain.mcpb              # Claude Desktop extension (install via Settings)
+│   └── claude_desktop.example.json   # manual config template (Developer -> Edit Config)
+├── mcp-extension/                    # source for brand-brain.mcpb
 ├── docs/
 │   ├── STRATEGY.md      # Part 1: strategy write-up
 │   ├── BUILD.md         # Part 2: stack, prompt design, drift, productionizing

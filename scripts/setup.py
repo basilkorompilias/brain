@@ -95,6 +95,7 @@ def main() -> None:
 
     print("4/4  Writing MCP config files")
     _write_mcp_configs()
+    _run([sys.executable, str(ROOT / "scripts" / "pack_mcpb.py")])
 
     _ensure_executable(ROOT / "scripts" / "launch_mcp.py")
     _ensure_executable(ROOT / "setup.command")
@@ -105,8 +106,8 @@ Done - Brand Brain is ready.
 
 Config files:
   Cursor:         .cursor/mcp.json
-  Claude Desktop: mcp-config/claude_desktop.json  (copy into your Claude config)
-  Other clients:  same command/args/cwd as claude_desktop.json
+  Claude Desktop: mcp-config/brand-brain.mcpb  (Install Extension in Claude settings)
+  Manual config:  mcp-config/claude_desktop.json  (Developer -> Edit Config)
 
 See README.md for connection steps.
 """

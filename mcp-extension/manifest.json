@@ -1,0 +1,59 @@
+{
+  "manifest_version": "0.3",
+  "name": "brand-brain",
+  "display_name": "Brand Brain",
+  "version": "0.1.0",
+  "description": "Multi-brand voice MCP server: guidelines, campaigns, and copy validation.",
+  "author": {
+    "name": "Brand Brain"
+  },
+  "server": {
+    "type": "python",
+    "entry_point": "claude_launcher.py",
+    "mcp_config": {
+      "command": "python3",
+      "args": ["${__dirname}/claude_launcher.py"],
+      "env": {
+        "BRAND_BRAIN_ROOT": "${user_config.project_path}"
+      },
+      "platform_overrides": {
+        "win32": {
+          "command": "python"
+        }
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "list_brands",
+      "description": "List available brands with industry and voice"
+    },
+    {
+      "name": "get_brand_guidelines",
+      "description": "Load brand guidelines, tone, and do's and don'ts"
+    },
+    {
+      "name": "get_campaign_examples",
+      "description": "Load past campaign examples with metadata"
+    },
+    {
+      "name": "validate_copy",
+      "description": "Validate copy against brand voice rules"
+    }
+  ],
+  "compatibility": {
+    "claude_desktop": ">=1.0.0",
+    "platforms": ["darwin", "win32"],
+    "runtimes": {
+      "python": ">=3.10"
+    }
+  },
+  "user_config": {
+    "project_path": {
+      "type": "directory",
+      "title": "Brand Brain folder",
+      "description": "Path to the cloned brain repository after running setup",
+      "required": true
+    }
+  }
+}
