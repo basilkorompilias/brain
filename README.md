@@ -27,11 +27,11 @@ The brief asks for an approach that scales to 100+ clients. A Claude Project or 
 
 | Brand | Industry | Voice | The point it proves |
 |---|---|---|---|
-| **Lyrá** | Travel & Hospitality | serene, sensory, assured | Understated luxury. Bans hype, exclamation marks, and the word "luxury". |
+| **Lyra** | Travel & Hospitality | serene, sensory, assured | Understated luxury. Bans hype, exclamation marks, and the word "luxury". |
 | **Anása** | Public Sector / Social | warm, plain, steady | Plain, safe public-health voice. Requires a helpline, blocks stigma. |
 | **Kléos** | Food, Drinks & Beverages | bold, witty, proud | Heritage swagger. Bans spirits clichés, requires a responsibility line. |
 
-A tagline written for Lyrá will not pass as a Kléos line, and the validator proves it numerically (see `tests/`).
+A tagline written for Lyra will not pass as a Kléos line, and the validator proves it numerically (see `tests/`).
 
 ## Quick start
 
@@ -39,18 +39,23 @@ You need [Python 3.10+](https://www.python.org/downloads/) and any MCP-compatibl
 
 ### 1. Get the repo
 
+Clone **once**:
+
 ```bash
 git clone https://github.com/basilkorompilias/brain.git
 cd brain
+ls setup.command
 ```
+
+The last command must print `setup.command`. If you see `brain/setup.command` instead, you cloned a second time by mistake. Delete the folder and start again.
 
 ### 2. Run setup (one time)
 
 | | How |
 |---|---|
+| **Mac** | In Finder, double-click **`setup.command`** (if macOS blocks it: right-click, then Open) |
 | **Windows** | Double-click **`setup.bat`** |
-| **Mac** | Double-click **`setup.command`** (if macOS blocks it: right-click, then Open) |
-| **Terminal** | `python scripts/setup.py` |
+| **Terminal** | `./setup.command` |
 
 Setup creates a local environment, installs dependencies, runs a quick check, and writes MCP config files. When you see **Done - Brand Brain is ready**, continue.
 
@@ -58,24 +63,22 @@ Setup creates a local environment, installs dependencies, runs a quick check, an
 
 **Cursor**
 
-1. Open this folder as your workspace.
+1. **File -> Open Folder** and select that folder.
 2. **Settings -> MCP** -> enable **brand-brain**.
 3. Confirm you see **4 tools** with a green status.
-
-Setup writes `.cursor/mcp.json`.
 
 **Claude Desktop**
 
 1. **Settings -> Extensions -> Advanced settings -> Install Extension**
-2. Select **`mcp-config/brand-brain.mcpb`**
-3. Set **Brand Brain folder** to this repo path
+2. Select **`mcp-config/brand-brain.mcpb`** inside that folder
+3. Set **Repository root** to that same folder
 4. Confirm **brand-brain** shows 4 tools
 
 ### 4. Try a Creative-Director session
 
 Open chat with the tools enabled and paste something like:
 
-> "Use brand-brain. I'm working on Lyrá. Pull the guidelines and past campaigns, then give me 3 launch concepts for the new winter season, write an OOH headline, an Instagram caption and an email subject line, then validate each with validate_copy and rewrite anything that isn't on-brand."
+> "Use brand-brain. I'm working on Lyra. Pull the guidelines and past campaigns, then give me 3 launch concepts for the new winter season, write an OOH headline, an Instagram caption and an email subject line, then validate each with validate_copy and rewrite anything that isn't on-brand."
 
 **Something not working?** Re-run setup, then restart your MCP client.
 

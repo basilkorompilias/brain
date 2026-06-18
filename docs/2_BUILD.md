@@ -32,7 +32,7 @@ Tool descriptions are themselves prompt engineering. Each tool's docstring tells
   "reading_grade_target": { "min": 4, "max": 9 },
   "sentence_length_target": { "max_avg_words": 16 },
   "banned_words": ["luxury", "exclusive", "stunning"],
-  "banned_patterns": [ {"pattern": "!", "reason": "Lyrá never uses '!'"} ],
+  "banned_patterns": [ {"pattern": "!", "reason": "Lyra never uses '!'"} ],
   "preferred_words": ["light", "salt", "stone"],
   "required_elements": [ {"id": "helpline", "any_of": ["1to1","call","text"]} ],
   "rules": [ {"id": "no_hype", "severity": "high"} ]
@@ -45,7 +45,7 @@ This separates human-readable guidance (the `.md`) from machine-enforceable rule
 
 Drift means the model slowly reverts to generic, enthusiastic AI tone over a long session. Four layered defences:
 
-1. Per-brand banned/preferred lexicons. Each brand has explicit off-voice words (Lyrá: "luxury"; Anása: "crazy"; Kléos: "smooth") that get caught deterministically regardless of how the model is feeling.
+1. Per-brand banned/preferred lexicons. Each brand has explicit off-voice words (Lyra: "luxury"; Anása: "crazy"; Kléos: "smooth") that get caught deterministically regardless of how the model is feeling.
 2. The deterministic validator as a tripwire. Because it's rules-based, it cannot drift. It scores every draft the same way every time, so drift is caught the moment it appears, not after it ships.
 3. Required-element enforcement. Compliance items (Anása's helpline, Kléos's responsibility line) are hard-required for campaign copy. They can't be forgotten.
 4. Readability and sentence-length guards. These catch the most common drift signal: sentences quietly getting longer and more adjective-laden over a session.

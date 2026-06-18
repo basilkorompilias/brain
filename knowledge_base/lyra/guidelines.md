@@ -1,4 +1,4 @@
-# Lyrá — Brand Guidelines
+# Lyra — Brand Guidelines
 
 > **Industry:** Travel, Hospitality & Destinations
 > **Archetype:** Luxury coastal resort & residences (Cyclades, Greece)
@@ -8,11 +8,11 @@
 
 ## 1. Story
 
-Lyrá is a 38-key resort carved into a south-facing cliff on a quiet Cycladic
+Lyra is a 38-key resort carved into a south-facing cliff on a quiet Cycladic
 island. It is named after the lyre — and after Lyra, the constellation you can
 still see here because there is almost no light pollution. The brand was built
 against the "more is more" reflex of luxury travel: no buffets, no animation
-teams, no gold taps. Luxury at Lyrá is *subtraction* — space, silence, salt air,
+teams, no gold taps. Luxury at Lyra is *subtraction* — space, silence, salt air,
 and time that moves at the speed of the sea.
 
 ## 2. Mission
@@ -38,7 +38,7 @@ To give guests back the rarest luxury of all: their own attention.
 
 ## 5. Tone of voice
 
-Lyrá speaks the way the place feels: **unhurried, sensory, understated, sure of
+Lyra speaks the way the place feels: **unhurried, sensory, understated, sure of
 itself.** Think a well-read host who doesn't need to raise their voice. Short
 sentences. Long pauses. Concrete nouns over adjectives. The sea, the stone, the
 light do the selling — we just point.

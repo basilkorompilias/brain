@@ -52,7 +52,35 @@ def _write_cursor_config() -> None:
     )
 
 
+def _check_project_root() -> None:
+    markers = ("pyproject.toml", "brand_brain", "knowledge_base", "scripts/setup.py")
+    missing = [name for name in markers if not (ROOT / name).exists()]
+    if not missing:
+        return
+
+    nested = ROOT / "brain"
+    if (nested / "setup.command").is_file():
+        sys.exit(
+            "This folder is not the project root.\n"
+            "It looks like the repo was cloned twice (brain/brain).\n"
+            f"Run setup from the inner folder instead:\n"
+            f"  cd {nested}\n"
+            f"  ./setup.command"
+        )
+
+    sys.exit(
+        "Run setup from the cloned repo root.\n"
+        f"Missing: {', '.join(missing)}\n"
+        "Clone once, then cd into the brain folder:\n"
+        "  git clone https://github.com/basilkorompilias/brain.git\n"
+        "  cd brain\n"
+        "  ./setup.command"
+    )
+
+
 def main() -> None:
+    _check_project_root()
+
     if sys.version_info < MIN_PYTHON:
         sys.exit(
             f"Python {MIN_PYTHON[0]}.{MIN_PYTHON[1]}+ is required "

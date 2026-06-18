@@ -3,7 +3,7 @@
 
 ## Where the AI surprised me (good and bad)
 
-Good: once the model had `get_brand_guidelines` and `get_campaign_examples` in front of it, the restraint jumped. Asked cold, an LLM writes luxury-hotel copy full of "stunning," "unforgettable," and exclamation marks. Given Lyrá's do's and don'ts and three real past lines, it produced genuinely understated copy (short, sensory, no hype) that I'd have been happy to show. The retrieve-generate-validate-rewrite loop is where it shone. When `validate_copy` returned a banned-word finding with a suggestion, the model fixed itself in the same turn, no human nudging.
+Good: once the model had `get_brand_guidelines` and `get_campaign_examples` in front of it, the restraint jumped. Asked cold, an LLM writes luxury-hotel copy full of "stunning," "unforgettable," and exclamation marks. Given Lyra's do's and don'ts and three real past lines, it produced genuinely understated copy (short, sensory, no hype) that I'd have been happy to show. The retrieve-generate-validate-rewrite loop is where it shone. When `validate_copy` returned a banned-word finding with a suggestion, the model fixed itself in the same turn, no human nudging.
 
 Bad (the honest part). Two failure modes:
 

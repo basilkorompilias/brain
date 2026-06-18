@@ -7,7 +7,7 @@ I would not start with the brands that are easiest to automate. I'd start with t
 
 That gives three archetypes, which are the three brands in this prototype:
 
-1. **Luxury hospitality (Lyrá).** Voice is the product. A luxury resort sells a feeling, and the failure mode (sounding like a hype-y travel ad) is instantly recognisable. It's the cleanest proof that the system can hold a restrained voice, which is the hardest thing for an LLM to do. Models default to enthusiastic and over-adjectived. High volume of always-on social and CRM copy means real time saved.
+1. **Luxury hospitality (Lyra).** Voice is the product. A luxury resort sells a feeling, and the failure mode (sounding like a hype-y travel ad) is instantly recognisable. It's the cleanest proof that the system can hold a restrained voice, which is the hardest thing for an LLM to do. Models default to enthusiastic and over-adjectived. High volume of always-on social and CRM copy means real time saved.
 
 2. **Public-sector / social cause (Anása).** The opposite voice: plain, warm, accessible. It also has the highest stakes. A mental-health campaign has safe-messaging rules, mandatory helpline signposting, and stigma language that must never ship. This archetype proves Brand Brain can enforce hard compliance rules, not just stylistic preferences. It's also where campaigns-for-good positioning lives.
 
@@ -77,7 +77,7 @@ Brand Brain's honest pitch: it removes the 30-minute context-reload tax and the 
 
 # A note on the brands and IP
 
-All three brands in this prototype (Lyrá, Anása, and Kléos) are fictional, created for this exercise. Their guidelines, voice rules, and "past campaigns" are synthesized to be realistic and to cover three very different voice and compliance profiles across three industries (Travel & Hospitality, Public Sector / Social Causes, Food & Drinks).
+All three brands in this prototype (Lyra, Anása, and Kléos) are fictional, created for this exercise. Their guidelines, voice rules, and "past campaigns" are synthesized to be realistic and to cover three very different voice and compliance profiles across three industries (Travel & Hospitality, Public Sector / Social Causes, Food & Drinks).
 
 They are archetype-inspired by common agency work (resort branding, public-good campaigns, premium drinks), but no real client data, confidential material, or proprietary brand book was used. The "campaign outcomes" are illustrative, not real metrics.
 

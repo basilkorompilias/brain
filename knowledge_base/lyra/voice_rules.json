@@ -1,6 +1,6 @@
 {
   "brand_id": "lyra",
-  "name": "Lyrá",
+  "name": "Lyra",
   "industry": "Travel, Hospitality & Destinations",
   "voice_words": ["serene", "sensory", "assured"],
   "reading_grade_target": {"min": 4, "max": 9},
@@ -14,7 +14,7 @@
     "limited time", "deal", "discount", "offer", "hurry"
   ],
   "banned_patterns": [
-    {"pattern": "!", "reason": "Lyrá never uses exclamation marks."},
+    {"pattern": "!", "reason": "Lyra never uses exclamation marks."},
     {"pattern": "[\\U0001F300-\\U0001FAFF]", "reason": "No emoji.", "is_regex": true},
     {"pattern": "\\b(most|very|really|super)\\b", "reason": "Avoid intensifiers and superlatives; understate instead.", "is_regex": true}
   ],

@@ -83,7 +83,7 @@ def test_voice_is_brand_specific():
     line = "Book now for the most amazing, luxurious escape!"
     lyra = validate(get_brand("lyra"), line)
     kleos = validate(get_brand("kleos"), line)
-    # Lyrá bans 'luxurious'/'amazing'/'most'/'!'; Kléos doesn't ban these the same way.
+    # Lyra bans 'luxurious'/'amazing'/'most'/'!'; Kléos doesn't ban these the same way.
     assert lyra["score"] < kleos["score"]
 
 

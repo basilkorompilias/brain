@@ -51,8 +51,8 @@
   "user_config": {
     "project_path": {
       "type": "directory",
-      "title": "Brand Brain folder",
-      "description": "Path to the cloned brain repository after running setup",
+      "title": "Repository root",
+      "description": "The cloned brain folder that contains setup.command and knowledge_base (not the inner brand_brain package folder)",
       "required": true
     }
   }
