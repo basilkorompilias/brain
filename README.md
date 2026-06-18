@@ -2,8 +2,6 @@
 
 An MCP server that helps Creative Agencies generate and evaluate material consistent with inhouse standards and brand guidelines. Brand Brain has three tools: one to get brand rules, one to get past work, and one to check if the generated material follows the rules. It saves you from re-reading the brand book every time you start a task.
 
-Built as a Creative AI Technologist practical exercise (Track A).
-
 ## The problem (from the brief)
 
 > Every time a Creative Director, copywriter, or strategist starts work for a brand, they spend significant time re-loading themselves with the brand's tone, prior campaigns, do's and don'ts, and strategic positioning. With 50+ clients, this knowledge is fragmented across decks, brand books, briefs, and people's heads.
