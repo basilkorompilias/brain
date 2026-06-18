@@ -1,6 +1,6 @@
 """Tests that prove Brand Brain (a) loads, and (b) actually discriminates voice.
 
-Run:  cd brand-brain && python -m pytest -q     (or: python tests/test_validator.py)
+Run:  python scripts/setup.py   (or: python -m pytest -q)
 """
 import sys
 from pathlib import Path
@@ -53,6 +53,15 @@ def test_anasa_flags_stigma():
     assert len(banned) >= 2
 
 
+def test_anasa_no_substring_false_positive():
+    """'recall' should not satisfy the 'call' CTA requirement."""
+    anasa = get_brand("anasa")
+    tricky = "Recall the feeling of a better day. You deserve it."
+    res = validate(anasa, tricky, is_campaign=True)
+    rules = {f["rule"] for f in res["findings"]}
+    assert any(r.startswith("missing:") for r in rules)
+
+
 def test_kleos_requires_responsibility_line():
     kleos = get_brand("kleos")
     no_resp = "Old soul. New fire. Slow-aged in Greek oak. Pour it like you mean it."
@@ -80,7 +89,6 @@ def test_voice_is_brand_specific():
 
 if __name__ == "__main__":
     import traceback
-
     funcs = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     passed = 0
     for fn in funcs:

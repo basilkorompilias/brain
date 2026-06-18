@@ -1,5 +1,5 @@
 # Part 3 — Reflection
-*Brand Brain — Creative AI Technologist exercise, INTERWEAVE*
+*Brand Brain — Creative AI Technologist exercise*
 
 ## Where the AI surprised me (good and bad)
 
@@ -18,13 +18,13 @@ A closed-loop "house style learns from the CD" feature. Right now the rules are 
 
 Second place: a multimodal `get_brand_visuals` tool for the Art-Director half of the role. Same MCP server, adds image/asset retrieval and on-brand image-gen checks.
 
-## Where I'd push back on INTERWEAVE
+## Where I'd push back on leadership
 
 If leadership said "let's automate the creative team," I'd push back hard, and specifically:
 
-1. You can automate the baseline, but you can't automate the breakthrough. Brand Brain reliably kills the 30-minute context-reload and the off-voice first draft. It does not produce the category-breaking idea, which is the thing INTERWEAVE actually wins awards and pitches on. Automate the leap and you commoditise the one thing clients pay a premium for. The right framing is augmentation: free the team's hours for the leap, don't try to automate it.
+1. You can automate the baseline, but you can't automate the breakthrough. Brand Brain reliably kills the 30-minute context-reload and the off-voice first draft. It does not produce the category-breaking idea, which is the thing agencies actually win awards and pitches on. Automate the leap and you commoditise the one thing clients pay a premium for. The right framing is augmentation: free the team's hours for the leap, don't try to automate it.
 2. The system is only as good as the brand book behind it, and most brand knowledge is tacit, in people's heads. If you cut the people, you delete the source the AI depends on. The asset and the team are the same asset.
 3. Accountability can't be automated. For a brand like Anása (mental health), a machine can flag stigma words but cannot judge whether a piece is kind and safe in context. Someone has to own what ships. Removing the human doesn't remove the risk. It removes the person who catches it.
-4. Watch the homogenisation trap. If every agency runs the same models on the same prompts, output converges. INTERWEAVE's edge has to stay human taste and proprietary brand depth, with AI as the multiplier underneath, not the other way around.
+4. Watch the homogenisation trap. If every agency runs the same models on the same prompts, output converges. An agency's edge has to stay human taste and proprietary brand depth, with AI as the multiplier underneath, not the other way around.
 
 Brand Brain should be leverage for the creative team, not a replacement for it. The honest sell is faster baseline work and more time for breakthroughs. That is a story worth telling clients, too.

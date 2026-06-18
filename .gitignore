@@ -1,5 +1,6 @@
 __pycache__/
 *.py[cod]
+*.pyc
 *.egg-info/
 .eggs/
 build/
@@ -10,3 +11,4 @@ venv/
 .DS_Store
 .idea/
 .vscode/
+mcp-config/claude_desktop.json

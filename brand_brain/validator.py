@@ -1,12 +1,12 @@
 """Deterministic, rules-based copy validator.
 
 Why rules-based and not an LLM call?
-  1. Plug-anywhere: the MCP server needs no API key and no network, so it runs
-     identically in Cursor, Claude Desktop, or CI.
-  2. Reviewable: a Creative Director (and an evaluator) can read exactly *why* a
-     line passed or failed. No black box.
-  3. Deterministic: the same copy always gets the same critique — essential for a
-     live demo and for trust.
+1. Plug-anywhere: the MCP server needs no API key and no network, so it runs
+   identically in Cursor, Claude Desktop, or CI.
+2. Reviewable: a Creative Director (and an evaluator) can read exactly *why* a
+   line passed or failed. No black box.
+3. Deterministic: the same copy always gets the same critique — essential for a
+   live demo and for trust.
 
 The LLM (the MCP *client* — Cursor's model) still does the creative generation
 and can read this structured feedback to self-critique and rewrite. That is the
@@ -19,11 +19,9 @@ from dataclasses import asdict, dataclass, field
 
 from .knowledge import Brand
 
-
 # ---------------------------------------------------------------------------
 # Small, dependency-free text metrics
 # ---------------------------------------------------------------------------
-
 _WORD_RE = re.compile(r"[A-Za-z']+")
 _SENTENCE_RE = re.compile(r"[^.!?]+[.!?]?")
 _VOWEL_GROUPS = re.compile(r"[aeiouy]+", re.IGNORECASE)
@@ -71,7 +69,6 @@ def avg_sentence_length(text: str) -> float:
 # ---------------------------------------------------------------------------
 # Findings
 # ---------------------------------------------------------------------------
-
 @dataclass
 class Finding:
     severity: str            # "high" | "medium" | "low" | "good"
@@ -90,7 +87,6 @@ _SEVERITY_PENALTY = {"high": 25, "medium": 12, "low": 5, "good": 0}
 # ---------------------------------------------------------------------------
 # The validator
 # ---------------------------------------------------------------------------
-
 def validate(brand: Brand, copy: str, *, is_campaign: bool = True) -> dict:
     """Validate `copy` against `brand`'s voice rules. Returns structured feedback.
 
@@ -168,8 +164,8 @@ def validate(brand: Brand, copy: str, *, is_campaign: bool = True) -> dict:
                     severity="low",
                     rule="reading_grade",
                     message=(
-                        f"Reading grade {grade} is below target ({lo}-{hi}); "
-                        "fine for a headline, watch it for body copy."
+                        f"Reading grade {grade} is below target ({lo}-{hi}). "
+                        "Fine for a headline, watch it for body copy."
                     ),
                 )
             )
@@ -194,7 +190,11 @@ def validate(brand: Brand, copy: str, *, is_campaign: bool = True) -> dict:
     if is_campaign:
         for req in rules.get("required_elements", []):
             options = [o.lower() for o in req.get("any_of", [])]
-            if options and not any(o in lower for o in options):
+            # Word-boundary check to avoid substring false positives
+            # (e.g. "recall" should not satisfy "call")
+            if options and not any(
+                re.search(rf"\b{re.escape(o)}\b", lower) for o in options
+            ):
                 findings.append(
                     Finding(
                         severity="high",
@@ -233,6 +233,7 @@ def validate(brand: Brand, copy: str, *, is_campaign: bool = True) -> dict:
     # --- Score & verdict ----------------------------------------------
     penalty = sum(_SEVERITY_PENALTY[f.severity] for f in findings)
     score = max(0, 100 - penalty)
+
     if score >= 85:
         verdict = "on-brand"
     elif score >= 60:
@@ -266,11 +267,12 @@ def _suggest_alternative(rules: dict, banned: str) -> str:
 def _summarise(brand: Brand, verdict: str, findings: list[Finding]) -> str:
     highs = [f for f in findings if f.severity == "high"]
     voice = " / ".join(brand.voice_rules.get("voice_words", [])) or "the brand"
+
     if verdict == "on-brand":
         return f"Reads as {brand.name} ({voice}). No blocking issues."
     if verdict == "needs-work":
         return (
-            f"Close to {brand.name}'s voice but not there yet — "
+            f"Close to {brand.name}'s voice but not there yet. "
             f"{len(findings)} note(s) to address."
         )
     return (

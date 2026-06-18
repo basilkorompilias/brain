@@ -1,5 +1,5 @@
 # Part 1 — Strategy
-*Brand Brain — Creative AI Technologist exercise, INTERWEAVE*
+*Brand Brain — Creative AI Technologist exercise*
 
 ## 1. Which 2–3 client archetypes to target first, and why
 
@@ -9,7 +9,7 @@ That gives three archetypes, which are the three brands in this prototype:
 
 1. **Luxury hospitality (Lyrá).** Voice is the product. A luxury resort sells a feeling, and the failure mode (sounding like a hype-y travel ad) is instantly recognisable. It's the cleanest proof that the system can hold a restrained voice, which is the hardest thing for an LLM to do. Models default to enthusiastic and over-adjectived. High volume of always-on social and CRM copy means real time saved.
 
-2. **Public-sector / social cause (Anása).** The opposite voice: plain, warm, accessible. It also has the highest stakes. A mental-health campaign has safe-messaging rules, mandatory helpline signposting, and stigma language that must never ship. This archetype proves Brand Brain can enforce hard compliance rules, not just stylistic preferences. It's also where INTERWEAVE's "Drive Change" and campaigns-for-good positioning lives.
+2. **Public-sector / social cause (Anása).** The opposite voice: plain, warm, accessible. It also has the highest stakes. A mental-health campaign has safe-messaging rules, mandatory helpline signposting, and stigma language that must never ship. This archetype proves Brand Brain can enforce hard compliance rules, not just stylistic preferences. It's also where campaigns-for-good positioning lives.
 
 3. **FMCG / premium drinks (Kléos).** The commercial workhorse. High creative throughput across many channels, plus its own regulatory floor (alcohol marketing: no under-25s, no "drink equals success", mandatory responsibility line). Proves the system handles a bold voice and a third, different rule set.
 
@@ -19,7 +19,7 @@ I'd deliberately deprioritise brands with thin or generic guidelines, or ones mi
 
 ## 2. The right model + tooling stack, and why
 
-My choice: an MCP server as the brand-context layer, model-agnostic, with a deterministic local validator. Demoed in Cursor. Reasoning, as a real comparison:
+My choice: an MCP server as the brand-context layer, model-agnostic, with a deterministic local validator. Reasoning, as a real comparison:
 
 | Option | Strengths | Why it's not the core |
 |---|---|---|
@@ -28,15 +28,15 @@ My choice: an MCP server as the brand-context layer, model-agnostic, with a dete
 | **Gemini (Gems / Vertex)** | Huge context window (cheap to stuff a whole brand book in). Vertex offers EU data residency and Google-Cloud governance. Strong multimodality for the Art-Director half. | Gems are consumer-grade and locked. Vertex is the serious path but heavier to stand up. |
 | **Hybrid (my pick)** | Put the brand knowledge and rules behind MCP. Let the model be a swappable backend. | Slightly more upfront engineering, but it's the only option that survives a vendor, price, or regulation change. |
 
-Why MCP-first wins for INTERWEAVE specifically:
+Why MCP-first wins for a multi-brand agency specifically:
 
-- **Reusability across 147 clients.** The brand layer is written once and works from any MCP client. That directly answers "an approach we can scale."
+- **Reusability across 100+ clients.** The brand layer is written once and works from any MCP client. That directly answers "an approach we can scale."
 - **Tool use.** The CD flow (retrieve, generate, validate, rewrite) needs real tool calls, not just a long prompt. MCP is built for exactly this.
 - **Cost at scale.** The expensive part (validation) is deterministic and runs locally with zero token cost. Only generation hits a paid model.
 - **EU data residency.** Brand IP stays in your infrastructure (the server), not pasted into a third-party chat. You choose the generation model per client. A privacy-sensitive public-sector client can route to an EU-resident Vertex endpoint while a low-risk FMCG uses whatever is cheapest and best.
 - **Multimodality.** Out of scope for this exercise (the Art-Director half), but MCP doesn't block it. An image/asset tool can be added to the same server.
 
-Concrete recommendation for production: MCP server (this repo) plus Claude as default generation model for its tone control, with Gemini on Vertex as the EU-resident or cost-optimised alternative routed per-client. Cursor is the demo client here precisely because the architecture doesn't care which client you use.
+Concrete recommendation for production: MCP server (this repo) plus Claude as default generation model for its tone control, with Gemini on Vertex as the EU-resident or cost-optimised alternative routed per-client.
 
 ## 3. MCP vs. simple RAG vs. system-prompt-only
 
@@ -48,7 +48,7 @@ These aren't competitors. They're a maturity ladder, and the right rung depends 
 | **Simple RAG** | Embed brand docs, retrieve relevant chunks at query time | Clients with lots of unstructured material (decks, transcripts, old briefs) | Retrieval is fuzzy for rules ("never say luxury"). You can't trust a semantic match to enforce a hard don't. No actions, just text-in/text-out. |
 | **MCP (this build)** | Typed tools over a curated knowledge base + deterministic checks | The portfolio standard. Any client where voice must be enforced, not just suggested | More upfront structuring of each brand's knowledge |
 
-How I'd deploy across the 147-client portfolio:
+How I'd deploy across a full client portfolio:
 
 - **System-prompt-only** goes to the long tail: tiny clients, pitches, experiments. Zero setup, good enough.
 - **RAG** goes to clients with deep archives of messy material. Bolt it inside an MCP tool (`search_brand_archive`) so retrieval feeds the same interface.
@@ -62,14 +62,14 @@ Brand Brain does not:
 
 - **Decide strategy.** It encodes the positioning strategists set. It won't tell you what the brand should stand for or which audience to chase.
 - **Approve or ship anything.** `validate_copy` returns a verdict and a score, not a green light. It's an advisor, not an approver.
-- **Invent the leap.** It's excellent at on-voice, competent output and at catching what's off-voice. It does not originate the genuinely surprising, category-breaking idea. That is INTERWEAVE's "Bridging4Creativity" or "GoAllTheWay" territory. It raises the floor. It does not raise the ceiling.
+- **Invent the leap.** It's excellent at on-voice, competent output and at catching what's off-voice. It does not originate the genuinely surprising, category-breaking idea. That is breakthrough-creative territory. It raises the floor. It does not raise the ceiling.
 - **Generate the brand's first voice.** It needs a real brand book behind it. Put bad input in, get confident bad output.
 - **Replace human judgment on sensitive work.** For Anása, a machine can flag stigma words. It cannot judge whether a piece is kind in context. A human signs off on anything that touches mental health.
 
 Where the human Creative Director stays essential:
 
 - **Taste and the final call.** Knowing when breaking a rule is the right move. The validator flags a rule break. The CD decides if it's brilliant or wrong.
-- **Strategy and the brief behind the brief.** INTERWEAVE's own value is "we dare challenge the brief." A model takes the brief literally. A CD interrogates it.
+- **Strategy and the brief behind the brief.** An agency's value is challenging the brief, not just executing it. A model takes the brief literally. A CD interrogates it.
 - **The original idea.** The concept worth building a campaign around.
 - **Accountability.** When work ships, a person owns it. The system is on the hook for nothing.
 

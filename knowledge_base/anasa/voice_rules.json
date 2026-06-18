@@ -4,7 +4,7 @@
   "industry": "Public Sector / Social Causes",
   "voice_words": ["warm", "plain", "steady"],
   "reading_grade_target": {"min": 3, "max": 7},
-  "sentence_length_target": {"max_avg_words": 14, "ideal_max_words": 18},
+  "sentence_length_target": {"max_avg_words": 14},
   "person": "second person and inclusive first-person plural",
   "banned_words": [
     "crazy", "insane", "psycho", "lunatic", "nuts", "deranged",

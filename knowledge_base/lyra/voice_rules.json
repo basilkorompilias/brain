@@ -4,7 +4,7 @@
   "industry": "Travel, Hospitality & Destinations",
   "voice_words": ["serene", "sensory", "assured"],
   "reading_grade_target": {"min": 4, "max": 9},
-  "sentence_length_target": {"max_avg_words": 16, "ideal_max_words": 22},
+  "sentence_length_target": {"max_avg_words": 16},
   "person": "second person or first-person plural",
   "banned_words": [
     "luxury", "luxurious", "exclusive", "world-class", "premium",

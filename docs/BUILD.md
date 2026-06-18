@@ -7,10 +7,10 @@
 |---|---|---|
 | Protocol | **MCP** via the official `mcp` Python SDK (`FastMCP`) | Vendor-neutral tool layer. The reusable asset that scales across the portfolio. |
 | Language | **Python 3.10+** | Fast to read, zero ceremony. The SDK is first-class. |
-| Transport | **stdio** | What Cursor and Claude Desktop launch. No ports, no server to host for the demo. |
+| Transport | **stdio** | What MCP clients launch locally. No ports, no hosted server. |
 | Knowledge base | **Flat files** (`guidelines.md` + `voice_rules.json` + `campaigns.json` per brand) | Reviewable by a CD without a DB. Mirrors how brand books already live. Trivially diffable in git. |
 | Validator | **Pure Python, deterministic, no LLM** | Reviewable, reproducible, free to run, works offline and anywhere. |
-| Client (demo) | **Cursor** | No Claude account required. Proves the "plug anywhere" claim. |
+| Client | **MCP host** | Cursor, Claude Desktop, and other stdio MCP clients. |
 
 Why I extended Track A to 3 brands: Track A asks for one brand. Track B's superpower is distinct voices across brands. By making `brand_id` an argument on every tool, one MCP server delivers Track A's technical depth and Track B's voice-differentiation proof, at almost no extra cost. The tests prove the voices are actually distinct (`test_voice_is_brand_specific`).
 
@@ -79,14 +79,12 @@ brand_brain/server.py      # 4 tools (3 required + list_brands)
 brand_brain/knowledge.py   # cached file-based KB loader, get_brand/list_brands
 brand_brain/validator.py   # FK grade, sentence metrics, rule engine, scoring
 knowledge_base/<brand>/    # guidelines.md, voice_rules.json, campaigns.json
-tests/test_validator.py    # 8 tests incl. cross-brand voice discrimination
+tests/test_validator.py    # 9 tests incl. cross-brand voice discrimination
 ```
 
 ## Run it
 
 ```bash
-cd brand-brain
-pip install -e .
-python tests/test_validator.py    # 8/8
-# then enable in Cursor via .cursor/mcp.json
+python scripts/setup.py
+# then connect via .cursor/mcp.json or mcp-config/claude_desktop.json
 ```

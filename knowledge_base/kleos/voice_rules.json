@@ -4,7 +4,7 @@
   "industry": "Food, Drinks & Beverages",
   "voice_words": ["bold", "witty", "proud"],
   "reading_grade_target": {"min": 4, "max": 10},
-  "sentence_length_target": {"max_avg_words": 14, "ideal_max_words": 18},
+  "sentence_length_target": {"max_avg_words": 14},
   "person": "confident second person / brand first person",
   "banned_words": [
     "smooth", "premium taste", "perfect serve", "crafted to perfection",

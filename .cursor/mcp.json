@@ -1,8 +1,11 @@
 {
   "mcpServers": {
     "brand-brain": {
-      "command": "python",
-      "args": ["-m", "brand_brain.server"],
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": [
+        "-m",
+        "brand_brain.server"
+      ],
       "cwd": "${workspaceFolder}"
     }
   }
